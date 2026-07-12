@@ -1,0 +1,66 @@
+name: Bug report
+description: Report a reproducible problem in GuanZai.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping GuanZai improve. Remove secrets, credentials, and personal data before posting.
+
+  - type: input
+    id: version
+    attributes:
+      label: GuanZai version
+      placeholder: v0.3.0-alpha.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options:
+        - CLI
+        - Codex Skill
+        - WorkBuddy adapter
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+      description: Include the smallest safe command or steps that reproduce the issue.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, host application, and relevant provider adapter. Do not include tokens.
+      render: text
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, private prompts, personal data, and sensitive financial information.
+          required: true
+        - label: This is not a security vulnerability. I will use private vulnerability reporting for security issues.
+          required: true

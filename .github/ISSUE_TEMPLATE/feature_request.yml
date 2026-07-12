@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a focused improvement to GuanZai.
+title: "[Idea]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GuanZai grows by observing real work. Tell us about the decision or workflow, not only the desired switch.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or decision
+      description: What becomes costly, risky, repetitive, or difficult today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should a successful solution make possible?
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and examples
+      description: Include providers, host applications, privacy limits, or cost tradeoffs that matter.
+
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Project principles
+      options:
+        - label: I understand GuanZai plans and routes work, but does not yet provide a complete automatic execution loop.
+          required: true
+        - label: I removed credentials and personal data from this request.
+          required: true

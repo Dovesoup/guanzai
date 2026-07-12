@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package and build tools
+        run: python -m pip install --upgrade pip build pyyaml .
+
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Validate Codex Skill metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          skill = Path("skill/guanzai/SKILL.md").read_text(encoding="utf-8")
+          assert skill.startswith("---\n"), "SKILL.md must start with YAML frontmatter"
+          _, frontmatter, _ = skill.split("---", 2)
+          metadata = yaml.safe_load(frontmatter)
+          assert metadata["name"] == "guanzai"
+          assert metadata.get("description")
+
+          agent = yaml.safe_load(
+              Path("skill/guanzai/agents/openai.yaml").read_text(encoding="utf-8")
+          )
+          assert agent["interface"]["display_name"] == "GuanZai · 观在"
+          PY
+
+      - name: Build distributions
+        run: python -m build
+
+      - name: Upload distributions
+        if: matrix.python-version == '3.13'
+        uses: actions/upload-artifact@v4
+        with:
+          name: guanzai-distributions
+          path: dist/*
+          if-no-files-found: error

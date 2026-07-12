@@ -1,0 +1,7 @@
+interface:
+  display_name: "GuanZai · 观在"
+  short_description: "观而后动，以最低成本编排多 Agent 与模型"
+  brand_color: "#243B36"
+  default_prompt: "Use $guanzai to plan this task with cost-aware agents and explicit capability boundaries."
+policy:
+  allow_implicit_invocation: true

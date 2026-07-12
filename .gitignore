@@ -1,0 +1,57 @@
+# Build and package output
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Python caches and test tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local GuanZai configuration, memory, and state
+.guanzai/
+
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+!credentials-template.json
+!credentials.example.json
+!credentials-schema.json
+!credentials.schema.json
+!secrets-template.json
+!secrets.example.json
+!secrets-schema.json
+!secrets.schema.json
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

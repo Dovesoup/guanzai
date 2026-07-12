@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guanzai"
+version = "0.3.0a1"
+description = "Cost-aware, provider-neutral multi-agent orchestration"
+authors = [
+  { name = "Dovesoup" },
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+keywords = [
+  "agents",
+  "ai",
+  "governance",
+  "multi-agent",
+  "orchestration",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Homepage = "https://github.com/Dovesoup/guanzai"
+Repository = "https://github.com/Dovesoup/guanzai"
+Issues = "https://github.com/Dovesoup/guanzai/issues"
+
+[project.scripts]
+guanzai = "guanzai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
