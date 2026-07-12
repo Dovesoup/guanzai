@@ -5,9 +5,15 @@
 > 观而后动，众智自生。
 > Observar a fondo. Actuar juntos. Evolucionar continuamente.
 
-GuanZai es una capa pequeña y determinista de gobernanza y planificación para agentes de IA locales. Antes de añadir más mecanismos, plantea tres preguntas: ¿conviene que este trabajo siga en solo?, ¿compensa el coste de incorporar otro agente?, ¿y sus consecuencias exigen una auditoría independiente?
+> **好钢用在刀刃上。贵模型也是一样。**
+> *Guarda tu mejor acero —y tus modelos premium— para el trabajo que de verdad los necesita.*
 
-Está creado en el punto de encuentro entre los sistemas técnicos y el criterio humano. El objetivo no es reunir el equipo más grande posible, sino elegir con intención y dejar espacio suficiente para que las personas conserven el control.
+> **Codex × WorkBuddy：中西协作，各尽所长。**
+> GuanZai coordina Codex con modelos rentables disponibles a través de WorkBuddy, encaminando cada tarea según su capacidad, coste y consecuencia.
+
+**Usa la inteligencia premium solo donde importa.** GuanZai ayuda a evitar delegaciones innecesarias, a emplear modelos de bajo coste en trabajos adecuados y a reservar el razonamiento avanzado y la revisión independiente para las decisiones que más importan.
+
+Oriente y Occidente se encuentran —no como panacea, sino como una forma práctica de hacer que cada token premium cuente.
 
 > [!WARNING]
 > **Alpha pública — `v0.3.0-alpha.1`.** GuanZai produce planes y comandos para adaptadores; todavía no es un ciclo de ejecución completo y desatendido. Revisa cada manifiesto y comando antes de usarlo. Las interfaces y los detalles de las políticas pueden cambiar.
