@@ -26,13 +26,13 @@ East meets West—not as a cure-all, but as a practical way to make every premiu
 - Detects local Codex CLI and WorkBuddy CLI capabilities with `guanzai doctor`.
 - Keeps bulk mechanical work from being mistaken for cognitive complexity.
 - Requires independent audit for decision-grade finance and consequential mutations matched by the current policy.
-- Ships an installable Codex Skill and 28 policy, routing, packet, CLI, and capability tests.
+- Ships an installable Codex Skill and 42 policy, routing, packet, CLI, and capability tests.
 
 GuanZai does **not** currently launch the generated worker commands, poll their progress, collect results, or close the plan–execute–audit loop automatically. A manifest saying `"execution": "planned"` means exactly that.
 
 ## Policy defaults
 
-- WorkBuddy Hy3 / Hunyuan 3 (`hunyuan-3`) is the first low-cost choice; DeepSeek V4 Pro (`deepseek-v4-pro`) is the next WorkBuddy tier.
+- WorkBuddy Hy3 / Hunyuan 3 (`hy3`) is the first low-cost choice; DeepSeek V4 Pro (`deepseek-v4-pro`) is the next WorkBuddy tier.
 - WorkBuddy commands always use `high` reasoning effort.
 - WorkBuddy GLM is blocked.
 - Premium Fast/speed mode is forbidden; generated work items use standard speed.
@@ -142,7 +142,7 @@ python3 -m unittest discover -s tests -v
 
 On Windows, the equivalent command is `py -m unittest discover -s tests -v`.
 
-The current suite contains 28 tests. See [Contributing](CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md), and the [Changelog](CHANGELOG.md).
+The current suite contains 42 tests. See [Contributing](CONTRIBUTING.md), [Code of Conduct](CODE_OF_CONDUCT.md), and the [Changelog](CHANGELOG.md).
 
 ## Independent work and prior art
 

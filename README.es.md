@@ -26,13 +26,13 @@ Oriente y Occidente se encuentran —no como panacea, sino como una forma práct
 - Detecta las capacidades locales de Codex CLI y WorkBuddy CLI con `guanzai doctor`.
 - Evita confundir el trabajo mecánico en bloque con la complejidad cognitiva.
 - Exige una auditoría independiente para tareas financieras destinadas a la toma de decisiones y cambios de consecuencias importantes que coincidan con la política actual.
-- Incluye un Codex Skill instalable y 28 pruebas de políticas, enrutamiento, paquetes, CLI y capacidades.
+- Incluye un Codex Skill instalable y 42 pruebas de políticas, enrutamiento, paquetes, CLI y capacidades.
 
 Actualmente, GuanZai **no** inicia los comandos de los trabajadores generados, consulta su progreso, recopila resultados ni cierra automáticamente el ciclo plan–ejecución–auditoría. Que un manifiesto indique `"execution": "planned"` significa exactamente eso.
 
 ## Políticas predeterminadas
 
-- WorkBuddy Hy3 / Hunyuan 3 (`hunyuan-3`) es la primera opción de bajo coste; DeepSeek V4 Pro (`deepseek-v4-pro`) es el siguiente nivel de WorkBuddy.
+- WorkBuddy Hy3 / Hunyuan 3 (`hy3`) es la primera opción de bajo coste; DeepSeek V4 Pro (`deepseek-v4-pro`) es el siguiente nivel de WorkBuddy.
 - Los comandos de WorkBuddy siempre usan un esfuerzo de razonamiento `high`.
 - WorkBuddy GLM está bloqueado.
 - Se prohíbe el modo Premium Fast/de alta velocidad; los elementos de trabajo generados usan la velocidad estándar.
@@ -142,7 +142,7 @@ python3 -m unittest discover -s tests -v
 
 En Windows, el comando equivalente es `py -m unittest discover -s tests -v`.
 
-La suite actual contiene 28 pruebas. Consulta [Contribuir](CONTRIBUTING.md), el [Código de conducta](CODE_OF_CONDUCT.md) y el [Registro de cambios](CHANGELOG.md).
+La suite actual contiene 42 pruebas. Consulta [Contribuir](CONTRIBUTING.md), el [Código de conducta](CODE_OF_CONDUCT.md) y el [Registro de cambios](CHANGELOG.md).
 
 ## Trabajo independiente y antecedentes
 

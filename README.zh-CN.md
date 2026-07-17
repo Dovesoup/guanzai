@@ -26,13 +26,13 @@
 - 通过 `guanzai doctor` 检测本地 Codex CLI 和 WorkBuddy CLI 能力。
 - 避免将批量机械工作误判为认知复杂性。
 - 对当前策略匹配的决策级金融任务和后果重大的变更要求独立审计。
-- 随附一个可安装的 Codex Skill，以及 28 项覆盖策略、路由、任务包、CLI 和能力的测试。
+- 随附一个可安装的 Codex Skill，以及 42 项覆盖策略、路由、任务包、CLI 和能力的测试。
 
 GuanZai 目前**不会**启动生成的工作者命令、轮询进度、收集结果，也不会自动闭合“计划–执行–审计”循环。清单中的 `"execution": "planned"` 就是其字面含义。
 
 ## 默认策略
 
-- WorkBuddy Hy3 / Hunyuan 3 (`hunyuan-3`) 是首选的低成本方案；DeepSeek V4 Pro (`deepseek-v4-pro`) 是下一个 WorkBuddy 层级。
+- WorkBuddy Hy3 / Hunyuan 3 (`hy3`) 是首选的低成本方案；DeepSeek V4 Pro (`deepseek-v4-pro`) 是下一个 WorkBuddy 层级。
 - WorkBuddy 命令始终使用 `high` 推理强度。
 - WorkBuddy GLM 被禁用。
 - 禁止 Premium Fast/高速模式；生成的工作项使用标准速度。
@@ -142,7 +142,7 @@ python3 -m unittest discover -s tests -v
 
 在 Windows 上，等效命令为 `py -m unittest discover -s tests -v`。
 
-当前测试套件包含 28 项测试。请参阅[贡献指南](CONTRIBUTING.md)、[行为准则](CODE_OF_CONDUCT.md)和[变更日志](CHANGELOG.md)。
+当前测试套件包含 42 项测试。请参阅[贡献指南](CONTRIBUTING.md)、[行为准则](CODE_OF_CONDUCT.md)和[变更日志](CHANGELOG.md)。
 
 ## 独立开发与既有工作
 

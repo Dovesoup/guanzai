@@ -26,13 +26,13 @@
 - `guanzai doctor` でローカルの Codex CLI と WorkBuddy CLI の機能を検出します。
 - 大量の機械的作業を認知的な複雑さと取り違えないようにします。
 - 現行ポリシーに合致する、意思決定に用いる金融作業と重大な変更には独立監査を要求します。
-- インストール可能な Codex Skill と、ポリシー、ルーティング、パケット、CLI、機能を対象とする 28 件のテストを同梱します。
+- インストール可能な Codex Skill と、ポリシー、ルーティング、パケット、CLI、機能を対象とする 42 件のテストを同梱します。
 
 GuanZai は現在、生成したワーカーコマンドの起動、進捗のポーリング、結果の収集、または計画–実行–監査ループの自動完結を**行いません**。マニフェストの `"execution": "planned"` は、文字どおり計画済みであることだけを意味します。
 
 ## ポリシーの既定値
 
-- WorkBuddy Hy3 / Hunyuan 3 (`hunyuan-3`) が最初の低コスト候補で、DeepSeek V4 Pro (`deepseek-v4-pro`) が次の WorkBuddy 階層です。
+- WorkBuddy Hy3 / Hunyuan 3 (`hy3`) が最初の低コスト候補で、DeepSeek V4 Pro (`deepseek-v4-pro`) が次の WorkBuddy 階層です。
 - WorkBuddy コマンドは常に `high` の推論強度を使用します。
 - WorkBuddy GLM はブロックされます。
 - Premium Fast/高速モードは禁止されています。生成される作業項目は標準速度を使用します。
@@ -142,7 +142,7 @@ python3 -m unittest discover -s tests -v
 
 Windows での同等のコマンドは `py -m unittest discover -s tests -v` です。
 
-現在のテストスイートには 28 件のテストがあります。[コントリビューション](CONTRIBUTING.md)、[行動規範](CODE_OF_CONDUCT.md)、[変更履歴](CHANGELOG.md)もご覧ください。
+現在のテストスイートには 42 件のテストがあります。[コントリビューション](CONTRIBUTING.md)、[行動規範](CODE_OF_CONDUCT.md)、[変更履歴](CHANGELOG.md)もご覧ください。
 
 ## 独立した開発と先行事例
 

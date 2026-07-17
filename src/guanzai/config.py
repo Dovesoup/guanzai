@@ -9,7 +9,7 @@ worker_overhead_tokens = 20000
 max_workers = 3
 
 [workbuddy]
-preferred_models = [\"hunyuan-3\", \"deepseek-v4-pro\"]
+preferred_models = [\"hy3\", \"deepseek-v4-pro\"]
 blocked_models = [\"glm\"]
 default_reasoning = \"high\"
 

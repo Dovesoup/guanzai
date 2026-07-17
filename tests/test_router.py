@@ -12,7 +12,7 @@ class RouterTests(unittest.TestCase):
         plan = plan_task("调研三个同类产品并整理功能表")
         worker = plan["work_items"][0]
         self.assertEqual(worker["provider"], "workbuddy")
-        self.assertEqual(worker["model"], "hunyuan-3")
+        self.assertEqual(worker["model"], "hy3")
         self.assertEqual(worker["reasoning"], "high")
 
     def test_short_research_nouns_stay_inline(self):

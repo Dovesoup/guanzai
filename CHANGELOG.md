@@ -2,6 +2,16 @@
 
 Notable changes are recorded here. Versions follow [Semantic Versioning](https://semver.org/), including prerelease identifiers.
 
+## Unreleased
+
+### Fixed
+
+- Use WorkBuddy's verified `hy3` model ID for Hunyuan 3 planning and generated commands.
+
+### Changed
+
+- Document the current 42-test suite.
+
 ## [0.3.0-alpha.1] - 2026-07-12
 
 First Public Alpha.

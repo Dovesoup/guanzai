@@ -26,13 +26,13 @@
 - `guanzai doctor`로 로컬 Codex CLI와 WorkBuddy CLI 기능을 감지합니다.
 - 대량의 기계적 작업을 인지적 복잡성으로 오인하지 않도록 합니다.
 - 현행 정책에 해당하는 의사결정용 금융 작업과 중대한 변경에 독립 감사를 요구합니다.
-- 설치 가능한 Codex Skill과 정책, 라우팅, 패킷, CLI, 기능을 다루는 28개 테스트를 제공합니다.
+- 설치 가능한 Codex Skill과 정책, 라우팅, 패킷, CLI, 기능을 다루는 42개 테스트를 제공합니다.
 
 현재 GuanZai는 생성된 워커 명령을 실행하거나, 진행 상황을 폴링하거나, 결과를 수집하거나, 계획–실행–감사 루프를 자동으로 닫지 **않습니다**. 매니페스트의 `"execution": "planned"`는 말 그대로 계획되었다는 뜻입니다.
 
 ## 기본 정책
 
-- WorkBuddy Hy3 / Hunyuan 3 (`hunyuan-3`)이 첫 번째 저비용 선택이며, DeepSeek V4 Pro (`deepseek-v4-pro`)가 그다음 WorkBuddy 등급입니다.
+- WorkBuddy Hy3 / Hunyuan 3 (`hy3`)이 첫 번째 저비용 선택이며, DeepSeek V4 Pro (`deepseek-v4-pro`)가 그다음 WorkBuddy 등급입니다.
 - WorkBuddy 명령은 항상 `high` 추론 강도를 사용합니다.
 - WorkBuddy GLM은 차단됩니다.
 - Premium Fast/고속 모드는 금지됩니다. 생성된 작업 항목은 표준 속도를 사용합니다.
@@ -142,7 +142,7 @@ python3 -m unittest discover -s tests -v
 
 Windows에서 동일한 명령은 `py -m unittest discover -s tests -v`입니다.
 
-현재 테스트 모음에는 28개 테스트가 있습니다. [기여 안내](CONTRIBUTING.md), [행동 강령](CODE_OF_CONDUCT.md), [변경 기록](CHANGELOG.md)을 참고하세요.
+현재 테스트 모음에는 42개 테스트가 있습니다. [기여 안내](CONTRIBUTING.md), [행동 강령](CODE_OF_CONDUCT.md), [변경 기록](CHANGELOG.md)을 참고하세요.
 
 ## 독립 작업과 선행 사례
 

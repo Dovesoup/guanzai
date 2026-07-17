@@ -15,7 +15,7 @@ class Model:
 
 
 DEFAULT_MODELS: List[Model] = [
-    Model("hunyuan-3", "workbuddy", cost=0, quality=2),
+    Model("hy3", "workbuddy", cost=0, quality=2),
     Model("deepseek-v4-pro", "workbuddy", cost=1, quality=3),
     Model("gpt-5.6-sol", "codex", cost=4, quality=5),
     Model("glm", "workbuddy", cost=5, quality=3, available=False),
