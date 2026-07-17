@@ -32,6 +32,7 @@ class ModeTests(unittest.TestCase):
 
         self.assertFalse(plan["decision"]["mutation"])
         self.assertEqual(plan["decision"]["mode"], "single")
+        self.assertEqual(len(plan["work_items"]), 1)
         self.assertEqual(plan["work_items"][0]["role"], "product-systems-architect")
         self.assertNotIn("builder", {item["role"] for item in plan["work_items"]})
         self.assertNotIn("实现并自测", plan["work_items"][0]["objective"])
