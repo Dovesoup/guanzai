@@ -60,7 +60,8 @@ def plan_task(task: str, mode: str = "auto", max_workers=None) -> Dict[str, obje
         }
 
     finance = bool(FINANCE.search(task))
-    build = bool(BUILD.search(task))
+    design = "design" in decision["reasons"]
+    build = bool(BUILD.search(task)) and bool(decision["mutation"])
     critical = bool(CRITICAL.search(task))
     research = bool(RESEARCH.search(task))
     items: List[Dict[str, object]] = []
@@ -69,6 +70,8 @@ def plan_task(task: str, mode: str = "auto", max_workers=None) -> Dict[str, obje
         items.append(_item("intelligence-analyst", f"建立证据链并分析：{task}", critical, 5 if critical else 3, "high" if critical else "medium"))
     elif build:
         items.append(_item("product-systems-architect", f"定义边界与验收标准：{task}", critical, 5 if critical else 3, "high" if critical else "medium"))
+    elif design:
+        items.append(_item("product-systems-architect", f"只读分析边界、取舍和验收标准：{task}", critical, 5 if critical else 3, "high" if critical else "medium"))
     else:
         items.append(_item("intelligence-analyst", f"收集、归纳并标注依据：{task}", False, 2, "low" if research else "medium"))
 

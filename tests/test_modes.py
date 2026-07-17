@@ -27,6 +27,15 @@ class ModeTests(unittest.TestCase):
         self.assertEqual(plan["decision"]["mode"], "single")
         self.assertEqual(plan["work_items"][0]["role"], "builder")
 
+    def test_read_only_design_routes_to_architect_not_builder(self):
+        plan = plan_task("评估 GuanZai 现有架构设计，只做分析，不修改项目")
+
+        self.assertFalse(plan["decision"]["mutation"])
+        self.assertEqual(plan["decision"]["mode"], "single")
+        self.assertEqual(plan["work_items"][0]["role"], "product-systems-architect")
+        self.assertNotIn("builder", {item["role"] for item in plan["work_items"]})
+        self.assertNotIn("实现并自测", plan["work_items"][0]["objective"])
+
     def test_invalid_mode_is_rejected(self):
         with self.assertRaises(ValueError):
             plan_task("任务", mode="ultra")
