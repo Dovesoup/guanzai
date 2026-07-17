@@ -7,7 +7,7 @@ MUTATION = re.compile(r"修改|实现|开发|修复|创建|新增|更新|执行|
 NEGATED_MUTATION = re.compile(r"(?:不(?:需要|要|用)?|不得|无需|请勿)(?:对(?:现有)?代码)?(?:做|进行|执行)?(?:任何)?(?:修改|实现|开发|修复|创建|新增|更新|执行|写入|删除|发布|上线|部署|迁移|付款|转账|计费|账单|公式|授权)")
 NOMINAL_IMPLEMENTATION = re.compile(r"实现(?:原理|方式|细节|机制|思路|方案)")
 NOMINAL_MUTATION = re.compile(r"修改(?:记录|建议|说明|历史)")
-READ_ONLY_ACTION = re.compile(r"只读|仅查看|分析|解释|评估|审查|查看|阅读|理解|输出报告")
+READ_ONLY_ACTION = re.compile(r"只读|仅查看|分析|解释|评估|审查|查看|检查|阅读|理解|输出报告")
 CLAUSE_BOUNDARY = re.compile(r"[、，,。；;！？!?]|然后|随后|并且|但是|但|再|与|和|并|后(?=(?:修改|实现|开发|修复|创建|新增|更新|执行|写入|删除|发布|上线|部署|迁移|付款|转账|计费|账单|公式|授权))")
 SENSITIVE = re.compile(r"金融|资金|账单|计费|支付|投资|安全|隐私|合规|生产|数据库")
 FINANCIAL_DECISION = re.compile(r"估值|投资风险|现金流|买入|卖出|授信|定价|财务结论")
@@ -23,9 +23,9 @@ UNCERTAIN = re.compile(r"不确定|探索|冲突|模糊|未知|从零|复杂")
 
 def _has_mutation(task: str) -> bool:
     for clause in CLAUSE_BOUNDARY.split(task):
-        clause = NOMINAL_MUTATION.sub("", clause)
         clause = NEGATED_MUTATION.sub("", clause)
         if READ_ONLY_ACTION.search(clause):
+            clause = NOMINAL_MUTATION.sub("", clause)
             clause = NOMINAL_IMPLEMENTATION.sub("", clause)
         if MUTATION.search(clause):
             return True

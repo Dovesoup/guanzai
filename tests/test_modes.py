@@ -84,6 +84,13 @@ class ModeTests(unittest.TestCase):
                 self.assertTrue(plan["decision"]["mutation"])
                 self.assertEqual([item["role"] for item in plan["work_items"]], ["builder"])
 
+    def test_explicit_single_mutation_noun_edits_route_to_builder(self):
+        for task in ("请修改记录页面并测试", "修改建议内容"):
+            with self.subTest(task=task):
+                plan = plan_task(task, mode="single")
+                self.assertTrue(plan["decision"]["mutation"])
+                self.assertEqual([item["role"] for item in plan["work_items"]], ["builder"])
+
     def test_long_auto_mutation_routes_to_builder_not_analyst(self):
         plan = plan_task("删除全部临时文件，验证清理结果并保留操作日志以供复核")
         roles = {item["role"] for item in plan["work_items"]}

@@ -80,6 +80,14 @@ class GateTests(unittest.TestCase):
             with self.subTest(task=task):
                 self.assertTrue(assess_task(task)["mutation"])
 
+    def test_mutation_nouns_are_read_only_only_in_read_only_clauses(self):
+        for task in ("检查代码修改记录并输出报告", "检查修改记录"):
+            with self.subTest(task=task):
+                self.assertFalse(assess_task(task)["mutation"])
+        for task in ("请修改记录页面并测试", "修改建议内容", "修改说明文档", "修改历史记录的保留期限"):
+            with self.subTest(task=task):
+                self.assertTrue(assess_task(task)["mutation"])
+
     def test_common_security_fix_verbs_are_mutations(self):
         result = assess_task("审计安全配置并修复生产漏洞")
         self.assertTrue(result["mutation"])
