@@ -41,12 +41,30 @@ class ModeTests(unittest.TestCase):
         for task in (
             "分析现有代码的实现原理，不修改代码",
             "解释接口设计，不执行任何修改",
+            "不执行修改，只输出报告",
+            "不进行任何修改，只分析架构",
+            "无需修改代码，只解释实现原理",
+            "不要修改代码，只分析架构",
+            "解释实现方案，不修改代码",
         ):
             with self.subTest(task=task):
                 plan = plan_task(task)
                 self.assertFalse(plan["decision"]["mutation"])
                 self.assertNotIn("builder", {item["role"] for item in plan["work_items"]})
                 self.assertTrue(all("实现并自测" not in item["objective"] for item in plan["work_items"]))
+
+    def test_implementation_requests_and_mixed_intents_route_to_builder(self):
+        for task in (
+            "请实现方案中的接口并测试",
+            "实现方案并测试",
+            "实现思路中的第一步",
+            "先只读检查配置，然后修改超时设置",
+            "不要修改旧代码，但新增测试",
+        ):
+            with self.subTest(task=task):
+                plan = plan_task(task)
+                self.assertTrue(plan["decision"]["mutation"])
+                self.assertIn("builder", {item["role"] for item in plan["work_items"]})
 
     def test_invalid_mode_is_rejected(self):
         with self.assertRaises(ValueError):
