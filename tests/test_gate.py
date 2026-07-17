@@ -51,6 +51,10 @@ class GateTests(unittest.TestCase):
             "不用修改代码，只分析架构",
             "不需要修改代码，只分析架构",
             "请勿修改代码，只分析架构",
+            "无需对代码进行任何修改，只分析架构",
+            "不要对现有代码做修改，只分析架构",
+            "不得修改代码，只分析架构",
+            "检查代码修改记录并输出报告",
         ):
             with self.subTest(task=task):
                 self.assertFalse(assess_task(task)["mutation"])
@@ -63,9 +67,16 @@ class GateTests(unittest.TestCase):
             "分析并实现方案",
             "分析、实现方案并测试",
             "分析和实现方案并测试",
+            "分析与实现方案并测试",
+            "评估后实现方案并测试",
             "先只读检查配置，然后修改超时设置",
             "不要修改旧代码，但新增测试",
         ):
+            with self.subTest(task=task):
+                self.assertTrue(assess_task(task)["mutation"])
+
+    def test_write_executor_verbs_are_mutations(self):
+        for task in ("删除文件", "创建目录", "部署服务"):
             with self.subTest(task=task):
                 self.assertTrue(assess_task(task)["mutation"])
 

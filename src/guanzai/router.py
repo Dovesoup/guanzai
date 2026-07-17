@@ -7,9 +7,8 @@ from .models import cheapest_model
 
 
 FINANCE = re.compile(r"金融|股票|估值|现金流|投资|证券|基金|财务|银行|支付|资金")
-BUILD = re.compile(r"开发|实现|新增|修改|修复|更新|编程|代码|前端|后端|接口|系统|架构|迁移|编译器|仪表盘")
 CRITICAL = re.compile(r"架构|安全|不可逆|资金|支付|迁移|合规|复杂|关键")
-RESEARCH = re.compile(r"调研|搜索|查找|检索|(?:整理|比较|收集)[^，,。；;！？!?]*(?:资料|竞品|证据|来源|数据|文献|信息)")
+RESEARCH = re.compile(r"调研|搜索|查找|检索")
 
 
 def _item(role: str, objective: str, critical: bool, quality: int, reasoning: str) -> Dict[str, object]:
@@ -61,7 +60,7 @@ def plan_task(task: str, mode: str = "auto", max_workers=None) -> Dict[str, obje
 
     finance = bool(FINANCE.search(task))
     design = "design" in decision["reasons"]
-    build = bool(BUILD.search(task)) and bool(decision["mutation"])
+    build = bool(decision["mutation"])
     critical = bool(CRITICAL.search(task))
     research = bool(RESEARCH.search(task))
     items: List[Dict[str, object]] = []

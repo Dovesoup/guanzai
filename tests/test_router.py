@@ -21,7 +21,17 @@ class RouterTests(unittest.TestCase):
                 self.assertEqual(plan_task(task)["work_items"], [])
 
     def test_simple_write_and_general_verbs_stay_inline(self):
-        for task in ("修改标题", "新增一行", "整理标题", "比较大小", "收集垃圾"):
+        for task in (
+            "修改标题",
+            "新增一行",
+            "整理标题",
+            "比较大小",
+            "收集垃圾",
+            "整理数据格式",
+            "比较数据大小",
+            "收集用户信息",
+            "整理标题而不是资料",
+        ):
             with self.subTest(task=task):
                 plan = plan_task(task)
                 self.assertEqual(plan["decision"]["mode"], "solo")

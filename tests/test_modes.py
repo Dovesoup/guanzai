@@ -49,6 +49,10 @@ class ModeTests(unittest.TestCase):
             "不用修改代码，只分析架构",
             "不需要修改代码，只分析架构",
             "请勿修改代码，只分析架构",
+            "无需对代码进行任何修改，只分析架构",
+            "不要对现有代码做修改，只分析架构",
+            "不得修改代码，只分析架构",
+            "检查代码修改记录并输出报告",
         ):
             with self.subTest(task=task):
                 plan = plan_task(task)
@@ -63,6 +67,8 @@ class ModeTests(unittest.TestCase):
             "实现思路中的第一步",
             "分析、实现方案并测试",
             "分析和实现方案并测试",
+            "分析与实现方案并测试",
+            "评估后实现方案并测试",
             "先只读检查配置，然后修改超时设置",
             "不要修改旧代码，但新增测试",
         ):
@@ -70,6 +76,20 @@ class ModeTests(unittest.TestCase):
                 plan = plan_task(task)
                 self.assertTrue(plan["decision"]["mutation"])
                 self.assertIn("builder", {item["role"] for item in plan["work_items"]})
+
+    def test_explicit_single_write_executor_routes_to_builder(self):
+        for task in ("删除文件", "创建目录", "部署服务"):
+            with self.subTest(task=task):
+                plan = plan_task(task, mode="single")
+                self.assertTrue(plan["decision"]["mutation"])
+                self.assertEqual([item["role"] for item in plan["work_items"]], ["builder"])
+
+    def test_long_auto_mutation_routes_to_builder_not_analyst(self):
+        plan = plan_task("删除全部临时文件，验证清理结果并保留操作日志以供复核")
+        roles = {item["role"] for item in plan["work_items"]}
+        self.assertTrue(plan["decision"]["mutation"])
+        self.assertIn("builder", roles)
+        self.assertNotIn("intelligence-analyst", roles)
 
     def test_invalid_mode_is_rejected(self):
         with self.assertRaises(ValueError):
