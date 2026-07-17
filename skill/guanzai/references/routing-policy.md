@@ -14,6 +14,8 @@ These are functions, not mandatory headcount. Combine functions for small tasks 
 
 Choose the cheapest available model that can meet the required quality. Escalate one step after a failed verification, unresolved disagreement, low-confidence evidence, or critical irreversible impact. Premium high/xhigh reasoning is justified for architecture, funds, security, compliance, difficult code, and final adjudication. Fast mode remains forbidden at every tier.
 
+Authorization precedes role keywords. Once the gate resolves a task as non-mutating, downstream routing must not create a builder or write-capable work item merely because the text mentions design, architecture, code, or a negated mutation such as “do not modify.” Route read-only design judgment to the architect function and preserve the original boundary in the objective.
+
 The measured standalone Codex CLI worker overhead is about 20k input tokens in the current desktop environment. Keep short tasks inline. Use a slim task packet without conversation history when a worker is justified. WorkBuddy Hy3 used 6,619 input and 1,893 output tokens for a bounded rule review at zero credits, making it suitable for reviews, classification, research drafts, and batch analysis when its result is independently verifiable.
 
 Audit is based on action and impact. A read-only security summary is not automatically audited; a one-line billing-formula change is. Decision-grade valuation, investment risk, and cash-flow conclusions remain independently reviewed even when read-only.

@@ -13,8 +13,9 @@ Observe before acting. Always assess; rarely spawn. Use the lowest-cost capable 
 2. For a new project, run `guanzai init` once. Do not overwrite an existing `.guanzai/config.toml`.
 3. Run `guanzai plan "<task>" --json`. A `solo` decision means continue inline and spawn nobody.
 4. Execute only through available adapters. Planned routing is not proof of execution.
-5. Require independent review for financial, security, irreversible, or otherwise critical conclusions.
-6. Treat `.guanzai/memory/` as reserved local state for a future validated-memory workflow; the Alpha does not yet read, write, or promote lessons automatically.
+5. Send user-visible updates only at the start, major phase changes, blockers, or findings that change the plan. Do not narrate routine tool calls.
+6. Require independent review for financial, security, irreversible, or otherwise critical conclusions.
+7. Treat `.guanzai/memory/` as reserved local state for a future validated-memory workflow; the Alpha does not yet read, write, or promote lessons automatically.
 
 ## Invariants
 
@@ -26,6 +27,9 @@ Observe before acting. Always assess; rarely spawn. Use the lowest-cost capable 
 - A simple task may remain single-agent. Multi-agent overhead must earn its cost.
 - Treat volume separately from cognitive complexity; mechanical bulk work does not justify a team by itself.
 - Trigger mandatory audit from action plus impact, not a sensitive keyword alone. Decision-grade finance remains auditable.
+- Prefer the smallest change that satisfies the task contract; do not add speculative features.
+- Validate plausible failure modes in proportion to the affected surface and disclose what remains untested.
+- A downstream router may not turn a gate-level `mutation = false` decision into a builder or other write-capable work item.
 
 ## Modes
 
