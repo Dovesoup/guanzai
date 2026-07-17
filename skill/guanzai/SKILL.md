@@ -14,7 +14,7 @@ Observe before acting. Always assess; rarely spawn. Use the lowest-cost capable 
 3. Run `guanzai plan "<task>" --json`. A `solo` decision means continue inline and spawn nobody.
 4. Execute only through available adapters. Planned routing is not proof of execution.
 5. Send user-visible updates only at the start, major phase changes, blockers, or findings that change the plan. Do not narrate routine tool calls.
-6. Require independent review for financial, security, irreversible, or otherwise critical conclusions.
+6. Require independent review when the gate marks `audit_required`; recommend review for other critical conclusions and escalate by risk.
 7. Treat `.guanzai/memory/` as reserved local state for a future validated-memory workflow; the Alpha does not yet read, write, or promote lessons automatically.
 
 ## Invariants

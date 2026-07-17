@@ -20,6 +20,14 @@ class RouterTests(unittest.TestCase):
             with self.subTest(task=task):
                 self.assertEqual(plan_task(task)["work_items"], [])
 
+    def test_read_only_code_tasks_stay_inline(self):
+        for task in ("看看代码", "分析代码", "只读检查代码"):
+            with self.subTest(task=task):
+                plan = plan_task(task)
+                self.assertEqual(plan["decision"]["mode"], "solo")
+                self.assertFalse(plan["decision"]["delegate"])
+                self.assertEqual(plan["work_items"], [])
+
     def test_simple_write_and_general_verbs_stay_inline(self):
         for task in (
             "修改标题",

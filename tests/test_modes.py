@@ -53,6 +53,8 @@ class ModeTests(unittest.TestCase):
             "不要对现有代码做修改，只分析架构",
             "不得修改代码，只分析架构",
             "检查代码修改记录并输出报告",
+            "不要修改和删除文件，只分析影响",
+            "无需修改或删除代码，只输出报告",
         ):
             with self.subTest(task=task):
                 plan = plan_task(task)
