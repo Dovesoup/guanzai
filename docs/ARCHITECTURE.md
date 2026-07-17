@@ -1,6 +1,6 @@
 # Architecture
 
-GuanZai `v0.3.0-alpha.1` is a deterministic planning core with command-building adapters. Its architecture is deliberately smaller than a full agent runtime.
+GuanZai `v0.3.0-alpha.2` is a deterministic planning core with command-building adapters. Its architecture is deliberately smaller than a full agent runtime.
 
 ## Current flow
 

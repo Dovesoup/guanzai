@@ -16,7 +16,7 @@
 East meets West—not as a cure-all, but as a practical way to make every premium token count.
 
 > [!WARNING]
-> **Public Alpha — `v0.3.0-alpha.1`.** GuanZai produces plans and adapter commands; it is not yet a complete, unattended execution loop. Review every manifest and command before use. Interfaces and policy details may change.
+> **Public Alpha — `v0.3.0-alpha.2`.** GuanZai produces plans and adapter commands; it is not yet a complete, unattended execution loop. Review every manifest and command before use. Interfaces and policy details may change.
 
 ## What this release does
 

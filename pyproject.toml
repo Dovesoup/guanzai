@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "guanzai"
-version = "0.3.0a1"
+version = "0.3.0a2"
 description = "Cost-aware, provider-neutral multi-agent orchestration"
 authors = [
   { name = "Dovesoup" },

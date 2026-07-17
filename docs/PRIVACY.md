@@ -1,6 +1,6 @@
 # Privacy
 
-GuanZai is local planning software, not a hosted service. This document describes the repository's own behavior in `v0.3.0-alpha.1`; separately installed agent CLIs and model providers have their own data practices.
+GuanZai is local planning software, not a hosted service. This document describes the repository's own behavior in `v0.3.0-alpha.2`; separately installed agent CLIs and model providers have their own data practices.
 
 ## Data GuanZai handles
 

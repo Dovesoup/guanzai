@@ -16,7 +16,7 @@
 Oriente y Occidente se encuentran —no como panacea, sino como una forma práctica de hacer que cada token premium cuente.
 
 > [!WARNING]
-> **Alpha pública — `v0.3.0-alpha.1`.** GuanZai produce planes y comandos para adaptadores; todavía no es un ciclo de ejecución completo y desatendido. Revisa cada manifiesto y comando antes de usarlo. Las interfaces y los detalles de las políticas pueden cambiar.
+> **Alpha pública — `v0.3.0-alpha.2`.** GuanZai produce planes y comandos para adaptadores; todavía no es un ciclo de ejecución completo y desatendido. Revisa cada manifiesto y comando antes de usarlo. Las interfaces y los detalles de las políticas pueden cambiar.
 
 ## Qué ofrece esta versión
 

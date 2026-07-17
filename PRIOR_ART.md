@@ -1,6 +1,6 @@
 # Prior Art and Acknowledgements
 
-GuanZai is an independent project. It is not a fork of the projects below, and the `v0.3.0-alpha.1` repository does not copy their source code. We name them because good boundaries are easier to see when neighboring work is acknowledged clearly.
+GuanZai is an independent project. It is not a fork of the projects below, and the `v0.3.0-alpha.2` repository does not copy their source code. We name them because good boundaries are easier to see when neighboring work is acknowledged clearly.
 
 ## Projects that informed the landscape
 

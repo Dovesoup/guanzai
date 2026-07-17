@@ -2,7 +2,7 @@
 
 Notable changes are recorded here. Versions follow [Semantic Versioning](https://semver.org/), including prerelease identifiers.
 
-## Unreleased
+## [0.3.0-alpha.2] - 2026-07-17
 
 ### Fixed
 

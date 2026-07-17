@@ -2,7 +2,7 @@
 
 ## Bundled material
 
-GuanZai `v0.3.0-alpha.1` contains no source code copied or modified from Superpowers, CC Switch, MCO/Hive, LiteLLM, or RouteLLM. Those projects are acknowledged as prior art in [PRIOR_ART.md](PRIOR_ART.md), not included as dependencies or vendored components.
+GuanZai `v0.3.0-alpha.2` contains no source code copied or modified from Superpowers, CC Switch, MCO/Hive, LiteLLM, or RouteLLM. Those projects are acknowledged as prior art in [PRIOR_ART.md](PRIOR_ART.md), not included as dependencies or vendored components.
 
 The runtime package declares no third-party Python dependencies. Python's standard library and the user's separately installed Codex CLI or WorkBuddy application are not redistributed by this repository.
 
