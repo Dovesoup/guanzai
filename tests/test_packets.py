@@ -23,6 +23,10 @@ class PacketTests(unittest.TestCase):
         self.assertLess(len(packet), 1500)
         self.assertIn("strict JSON", packet)
         self.assertIn("Fast mode is forbidden", packet)
+        self.assertIn("smallest change", packet)
+        self.assertIn("speculative features", packet)
+        self.assertIn("plausible failure modes", packet)
+        self.assertIn("what was not tested", packet)
         self.assertNotIn("conversation history", packet.lower())
 
     def test_codex_command_selects_model_effort_and_ephemeral_mode(self):
