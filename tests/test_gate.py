@@ -48,6 +48,9 @@ class GateTests(unittest.TestCase):
             "无需修改代码，只解释实现原理",
             "不要修改代码，只分析架构",
             "解释实现方案，不修改代码",
+            "不用修改代码，只分析架构",
+            "不需要修改代码，只分析架构",
+            "请勿修改代码，只分析架构",
         ):
             with self.subTest(task=task):
                 self.assertFalse(assess_task(task)["mutation"])
@@ -58,6 +61,8 @@ class GateTests(unittest.TestCase):
             "实现方案并测试",
             "实现思路中的第一步",
             "分析并实现方案",
+            "分析、实现方案并测试",
+            "分析和实现方案并测试",
             "先只读检查配置，然后修改超时设置",
             "不要修改旧代码，但新增测试",
         ):

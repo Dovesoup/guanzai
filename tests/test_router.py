@@ -20,6 +20,13 @@ class RouterTests(unittest.TestCase):
             with self.subTest(task=task):
                 self.assertEqual(plan_task(task)["work_items"], [])
 
+    def test_simple_write_and_general_verbs_stay_inline(self):
+        for task in ("修改标题", "新增一行", "整理标题", "比较大小", "收集垃圾"):
+            with self.subTest(task=task):
+                plan = plan_task(task)
+                self.assertEqual(plan["decision"]["mode"], "solo")
+                self.assertEqual(plan["work_items"], [])
+
     def test_architecture_reserves_premium_reasoning_for_critical_work(self):
         plan = plan_task("设计一个跨模型支付系统架构，涉及资金安全和不可逆迁移")
         critical = [item for item in plan["work_items"] if item["critical"]]
