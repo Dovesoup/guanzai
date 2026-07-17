@@ -39,6 +39,14 @@ class GateTests(unittest.TestCase):
         self.assertTrue(result["mutation"])
         self.assertEqual(result["mode"], "audited")
 
+    def test_explanatory_mentions_of_implementation_are_read_only(self):
+        for task in (
+            "分析现有代码的实现原理，不修改代码",
+            "解释接口设计，不执行任何修改",
+        ):
+            with self.subTest(task=task):
+                self.assertFalse(assess_task(task)["mutation"])
+
     def test_common_security_fix_verbs_are_mutations(self):
         result = assess_task("审计安全配置并修复生产漏洞")
         self.assertTrue(result["mutation"])

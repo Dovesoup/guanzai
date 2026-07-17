@@ -37,6 +37,17 @@ class ModeTests(unittest.TestCase):
         self.assertNotIn("builder", {item["role"] for item in plan["work_items"]})
         self.assertNotIn("实现并自测", plan["work_items"][0]["objective"])
 
+    def test_explanatory_mentions_of_implementation_do_not_route_to_builder(self):
+        for task in (
+            "分析现有代码的实现原理，不修改代码",
+            "解释接口设计，不执行任何修改",
+        ):
+            with self.subTest(task=task):
+                plan = plan_task(task)
+                self.assertFalse(plan["decision"]["mutation"])
+                self.assertNotIn("builder", {item["role"] for item in plan["work_items"]})
+                self.assertTrue(all("实现并自测" not in item["objective"] for item in plan["work_items"]))
+
     def test_invalid_mode_is_rejected(self):
         with self.assertRaises(ValueError):
             plan_task("任务", mode="ultra")
