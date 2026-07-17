@@ -60,6 +60,9 @@ class GateTests(unittest.TestCase):
             "只分析实现方案和修改建议",
             "请评估现有实现方案和修改建议，不进行任何修改",
             "分析风险和修复建议",
+            "只分析当前方案和实现细节",
+            "只读分析架构和实现方案",
+            "仅查看设计和实现方案，不修改代码",
         ):
             with self.subTest(task=task):
                 self.assertFalse(assess_task(task)["mutation"])
@@ -76,6 +79,9 @@ class GateTests(unittest.TestCase):
             "评估后实现方案并测试",
             "分析后修改代码",
             "分析并新增测试",
+            "分析并修改说明文档",
+            "检查并更新方案",
+            "检查并修复方案",
             "先只读检查配置，然后修改超时设置",
             "不要修改旧代码，但新增测试",
         ):
